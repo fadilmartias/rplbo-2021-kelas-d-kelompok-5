@@ -29,7 +29,6 @@
                                         <th>Tempat Lahir</th>
                                         <th>Tanggal Lahir</th>
                                         <th>Jenis Kelamin</th>
-                                        <th>Kelas</th>
                                         <th>Perihal</th>
                                         <th>Status Surat</th>
                                         <th class="text-right">Aksi</th>
@@ -47,17 +46,16 @@
                                         <td>{{ $surat->tempat_lahir }}</td>
                                         <td>{{ str_replace('-', ' ', date('d-F-Y', strtotime($surat->tanggal_lahir))) }}</td>
                                         <td>{{ $surat->jenis_kelamin }}</td>
-                                        <td>{{ $surat->kelas }}</td>
                                         <td>{{ $surat->perihal }}</td>
                                         <td>
                                             @if ($surat->status === 'surat selesai')
-                                            <span class="badge badge-success">{{ $surat->status }}</span>
+                                            <span class="badge badge-pill badge-success">{{ $surat->status }}</span>
                                             @elseif ($surat->status === 'pengajuan dibatalkan')
-                                            <span class="badge badge-danger">{{ $surat->status }}</span>
+                                            <span class="badge badge-pill badge-danger">{{ $surat->status }}</span>
                                             @elseif ($surat->status === 'pengajuan dikirim')
-                                            <span class="badge badge-secondary">{{ $surat->status }}</span>
+                                            <span class="badge badge-pill badge-secondary">{{ $surat->status }}</span>
                                             @else
-                                            <span class="badge badge-warning">{{ $surat->status }}</span>
+                                            <span class="badge badge-pill badge-warning">{{ $surat->status }}</span>
                                             @endif
                                         </td>
                                         <td class="btn-group">

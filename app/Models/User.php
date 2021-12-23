@@ -44,8 +44,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function scopeGetAll($query) {
+    public function scopeAll($query) {
         return $query->get();
+    }
+    public function scopeGetAll($query) {
+        return $query->orderBy('created_at', 'DESC')->get();
     }
 
     public function scopeCreate($query) {
@@ -56,8 +59,12 @@ class User extends Authenticatable
         return $query->get();
     }
 
-    public function scopeFindOrFail($query) {
+    public function scopeUpdate($query) {
         return $query->get();
+    }
+
+    public function scopeJmlUser($query) {
+        return $query->get()->count();
     }
 }
 

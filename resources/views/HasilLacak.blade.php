@@ -36,13 +36,13 @@
                                         <td>{{ $item->perihal}}</td>
                                         <td>
                                             @if ($item->status === 'legalisir selesai')
-                                            <span class="badge badge-success">{{ $item->status }}</span>
+                                            <span class="badge badge-pill badge-success">{{ $item->status }}</span>
                                             @elseif ($item->status === 'pengajuan dibatalkan')
-                                            <span class="badge badge-danger">{{ $item->status }}</span>
+                                            <span class="badge badge-pill badge-danger">{{ $item->status }}</span>
                                             @elseif ($item->status === 'pengajuan dikirim')
-                                            <span class="badge badge-secondary">{{ $item->status }}</span>
+                                            <span class="badge badge-pill badge-secondary">{{ $item->status }}</span>
                                             @else
-                                            <span class="badge badge-warning">{{ $item->status }}</span>
+                                            <span class="badge badge-pill badge-warning">{{ $item->status }}</span>
                                             @endif
                                         </td>
                                     </tr>

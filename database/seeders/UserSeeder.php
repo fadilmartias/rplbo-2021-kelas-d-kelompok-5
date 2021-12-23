@@ -21,5 +21,12 @@ class UserSeeder extends Seeder
             'password' => bcrypt('pitra'),
             'role' => 'Kepala Sekolah'
         ]);
+        User::create([
+            'nama_user' => 'Padil2',
+            'nip' => '261201',
+            'email' => 'padel2@hah.com',
+            'password' => bcrypt('pitra'),
+            'role' => 'Staff TU'
+        ]);
     }
 }

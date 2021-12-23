@@ -19,21 +19,21 @@ class PengajuanLegalisirController extends Controller
     }
 
     public function accLegalisir($id) {
-        $legalisirs = PengajuanLegalisir::findOrFail($id);
+        $legalisirs = PengajuanLegalisir::find($id);
 
         $legalisirs->update(['status' => 'pengajuan sedang diproses']);
 
         return redirect()->back();
     }
     public function rejectLegalisir($id) {
-        $legalisirs = PengajuanLegalisir::findOrFail($id);
+        $legalisirs = PengajuanLegalisir::find($id);
 
         $legalisirs->update(['status' => 'pengajuan dibatalkan']);
 
         return redirect()->back();
     }
     public function completeLegalisir($id) {
-        $legalisirs = PengajuanLegalisir::findOrFail($id);
+        $legalisirs = PengajuanLegalisir::find($id);
 
         $legalisirs->update(['status' => 'legalisir selesai']);
 

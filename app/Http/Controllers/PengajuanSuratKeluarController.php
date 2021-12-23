@@ -19,21 +19,21 @@ class PengajuanSuratKeluarController extends Controller
     }
 
     public function accSurat($id) {
-        $surat = PengajuanSuratKeluar::findOrFail($id);
+        $surat = PengajuanSuratKeluar::find($id);
 
         $surat->update(['status' => 'pengajuan sedang diproses']);
 
         return redirect()->back();
     }
     public function rejectSurat($id) {
-        $surat = PengajuanSuratKeluar::findOrFail($id);
+        $surat = PengajuanSuratKeluar::find($id);
 
         $surat->update(['status' => 'pengajuan dibatalkan']);
 
         return redirect()->back();
     }
     public function completeSurat($id) {
-        $surat = PengajuanSuratKeluar::findOrFail($id);
+        $surat = PengajuanSuratKeluar::find($id);
 
         $surat->update(['status' => 'surat selesai']);
 

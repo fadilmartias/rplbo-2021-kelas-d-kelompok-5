@@ -41,13 +41,13 @@
                                         <td>{{ $legalisir->tahun_tamat}}</td>
                                         <td>
                                             @if ($legalisir->status === 'legalisir selesai')
-                                            <span class="badge badge-success">{{ $legalisir->status }}</span>
+                                            <span class="badge badge-pill badge-success">{{ $legalisir->status }}</span>
                                             @elseif ($legalisir->status === 'pengajuan dibatalkan')
-                                            <span class="badge badge-danger">{{ $legalisir->status }}</span>
+                                            <span class="badge badge-pill badge-danger">{{ $legalisir->status }}</span>
                                             @elseif ($legalisir->status === 'pengajuan dikirim')
-                                            <span class="badge badge-secondary">{{ $legalisir->status }}</span>
+                                            <span class="badge badge-pill badge-secondary">{{ $legalisir->status }}</span>
                                             @else
-                                            <span class="badge badge-warning">{{ $legalisir->status }}</span>
+                                            <span class="badge badge-pill badge-warning">{{ $legalisir->status }}</span>
                                             @endif
                                         </td>
                                         <td class="btn-group">

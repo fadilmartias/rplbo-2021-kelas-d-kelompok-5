@@ -23,15 +23,31 @@ class PengajuanSuratKeluar extends Model
         'status'
     ];
 
-    public function scopeGetAll($query) {
+    public function scopeAll($query) {
         return $query->get();
     }
 
-    public function scopeFindOrFail($query) {
+    public function scopeGetAll($query) {
+        return $query->orderBy('created_at', 'DESC')->get();
+    }
+
+    public function scopeFind($query) {
         return $query->get();
     }
 
     public function scopeWhere($query) {
         return $query->get();
+    }
+
+    public function scopeCreate($query) {
+        return $query->get();
+    }
+
+    public function scopeUpdate($query) {
+        return $query->get();
+    }
+
+    public function scopeJmlPengajuanSuratKeluar($query) {
+        return $query->where('perihal', '!=', 'Legalisir Ijazah')->count();
     }
 }

@@ -51,7 +51,9 @@ class UserController extends Controller
     {
         $data = $request->all();
         $user = User::find($id);
-
+        if($data['password'] !== null) {
+            $user->update(['password' => bcrypt($data['password'])]);
+        }
         $user->update([
             'nama_user' => $data['nama_user'], // sesuai name form,
             'nip' => $data['nip'],
@@ -59,14 +61,12 @@ class UserController extends Controller
             'role' => $data['role'],
         ]);
 
-        if($user['password'] !== null) {
-            $user->update(['password' => bcrypt($data['password'])]);
-        }
+
         Alert::success('Sukses', 'Data user berhasil diupdate');
         return redirect()->route('user.index');
     }
     public function destroy($id) {
-        $user = User::findOrFail($id);
+        $user = User::find($id);
 
         $user->delete();
         Alert::success('Sukses', 'Data user berhasil dihapus');
