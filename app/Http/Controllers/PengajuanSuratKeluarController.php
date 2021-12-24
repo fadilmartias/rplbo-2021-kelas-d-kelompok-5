@@ -64,6 +64,6 @@ class PengajuanSuratKeluarController extends Controller
             'status' => 'pengajuan dikirim',
 
         ]);
-        return redirect()->route('ajukan-surat.create')->with('success', 'CATAT ID PENGAJUAN ANDA :'.$id_pengajuan);
+        return redirect()->route('ajukan-surat.create')->with('success', 'CATAT ID PENGAJUAN ANDA : '.$id_pengajuan);
     }
 }

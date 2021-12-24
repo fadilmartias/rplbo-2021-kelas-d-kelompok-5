@@ -59,6 +59,6 @@ class PengajuanLegalisirController extends Controller
             'perihal' => 'Legalisir Ijazah'
 
         ]);
-        return redirect()->route('ajukan-legalisir.create')->with('success', 'CATAT ID PENGAJUAN ANDA :'.$id_pengajuan);
+        return redirect()->route('ajukan-legalisir.create')->with('success', 'CATAT ID PENGAJUAN ANDA : '.$id_pengajuan);
     }
 }
