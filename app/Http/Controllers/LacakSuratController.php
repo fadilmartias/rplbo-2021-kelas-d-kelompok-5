@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PengajuanLegalisir;
 use App\Models\PengajuanSuratKeluar;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LacakSuratController extends Controller
 {
