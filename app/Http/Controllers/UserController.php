@@ -35,8 +35,7 @@ class UserController extends Controller
             'role' => $data['role'],
 
         ]);
-        Alert::success('Sukses', 'User berhasil dibuat');
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->with('success', 'User berhasil dibuat');;
     }
 
     public function edit($id)
@@ -60,16 +59,12 @@ class UserController extends Controller
             'email' => $data['email'],
             'role' => $data['role'],
         ]);
-
-
-        Alert::success('Sukses', 'Data user berhasil diupdate');
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->with('success', 'Data user berhasil diupdate');;
     }
     public function destroy($id) {
         $user = User::find($id);
 
         $user->delete();
-        Alert::success('Sukses', 'Data user berhasil dihapus');
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->with('success', 'Data user berhasil dihapus');
     }
 }
