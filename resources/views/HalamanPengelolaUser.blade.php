@@ -48,9 +48,11 @@
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <a class="dropdown-item" href="{{ route('edit.user', $user->id) }}"><i
                                                             class="fas fa-pencil-alt m-r-5"></i> Edit User</a>
-                                                    <a class="dropdown-item" href="#" data-toggle="modal"
-                                                        data-target="#delete_asset"><i
-                                                            class="fas fa-trash-alt m-r-5"></i>Hapus User</a>
+                                                            <form class="d-inline" action="{{ route('hapus.user', $user->id) }}" method="POST">
+                                                                @csrf
+                                                                @method('delete')
+                                                                <button type="submit" class="dropdown-item"><i class="fas fa-trash-alt m-r-5"></i>Hapus User</button>
+                                                            </form>
                                                 </div>
                                             </div>
                                         </td>
@@ -69,7 +71,7 @@
                 </div>
             </div>
         </div>
-        <div id="delete_asset" class="modal fade delete-modal" role="dialog">
+        {{-- <div id="delete_asset" class="modal fade delete-modal" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body text-center">
@@ -77,17 +79,11 @@
                         <h3 class="delete_class">Are you sure want to delete this Asset?</h3>
                         <div class="m-t-20"> <a href="#" class="btn btn-white"
                                 data-dismiss="modal">Close</a>
-                                <form class="d-inline" action="{{ route('hapus.user', $user->id) }}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
-
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 

@@ -28,7 +28,7 @@ class PengajuanSuratKeluar extends Model
     }
 
     public function scopeGetAll($query) {
-        return $query->orderBy('created_at', 'DESC')->get();
+        return $query->orderBy('created_at')->get();
     }
 
     public function scopeFind($query) {
@@ -44,6 +44,10 @@ class PengajuanSuratKeluar extends Model
     }
 
     public function scopeUpdate($query) {
+        return $query->get();
+    }
+
+    public function scopeDelete($query) {
         return $query->get();
     }
 

@@ -48,7 +48,7 @@ class User extends Authenticatable
         return $query->get();
     }
     public function scopeGetAll($query) {
-        return $query->orderBy('created_at', 'DESC')->get();
+        return $query->orderBy('created_at')->get();
     }
 
     public function scopeCreate($query) {
@@ -60,6 +60,10 @@ class User extends Authenticatable
     }
 
     public function scopeUpdate($query) {
+        return $query->get();
+    }
+
+    public function scopeDelete($query) {
         return $query->get();
     }
 

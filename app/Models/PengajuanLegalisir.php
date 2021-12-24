@@ -23,7 +23,7 @@ class PengajuanLegalisir extends Model
     }
 
     public function scopeGetAll($query) {
-        return $query->orderBy('created_at', 'DESC')->get();
+        return $query->orderBy('created_at')->get();
     }
 
     public function scopeFind($query) {
@@ -42,6 +42,9 @@ class PengajuanLegalisir extends Model
         return $query->get();
     }
 
+    public function scopeDelete($query) {
+        return $query->get();
+    }
     public function scopeJmlPengajuanLegalisir($query) {
         return $query->where('perihal', '=', 'Legalisir Ijazah')->count();
     }
